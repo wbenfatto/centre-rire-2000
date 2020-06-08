@@ -1,0 +1,57 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.title-service{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.col-select{
+    width: 500px !important;
+}
+
+.col-date{
+    width: 140px !important;
+}
+
+.col-btn{
+    width: 50px !important;
+}
+
+.footer{
+    margin-top: 150px;
+    height: 30px;
+    background-color: #444;
+}
+
+.table{
+    margin-bottom: 30px;
+}
+
+.thumbnail{
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    border: 1px solid #444;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+}
+
+.thumbnail-btn{
+    height: 200px;
+    width: 200px;
+    background: #444;
+    opacity: 0;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 40%;
+}
+
+.thumbnail-btn:hover{
+    opacity: 0.9;
+}
