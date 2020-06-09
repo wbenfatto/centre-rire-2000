@@ -5,13 +5,20 @@ html, body {
     width: 100%;
 }
 
+input:focus, input.form-control:focus {
+    outline:none !important;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
 .title-service{
     margin-top: 50px;
     margin-bottom: 20px;
 }
 
 .col-select{
-    width: 500px !important;
+    width: 450px !important;
 }
 
 .col-date{
@@ -54,4 +61,13 @@ html, body {
 
 .thumbnail-btn:hover{
     opacity: 0.9;
+}
+
+.searchField{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.fa-info-circle{
+    font-size: 26px;
 }

@@ -1,8 +1,5 @@
 <?php require_once 'parts/header.php'; ?>
 <?php require_once 'parts/options.php'; ?>
-    <pre>
-    <?php print_r($_POST); ?>
-</pre>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/clients.php">Clients</a></li>
@@ -10,26 +7,58 @@
         </ol>
     </nav>
     <div class="container-fluid">
-        <form method="post" autocomplete="off">
+        <form id="form" method="post" action="/actions/clients/create.php" autocomplete="off" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-2">
                     <div class="row">
-                        <div class="thumbnail" style="background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1728f24e3d2%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1728f24e3d2%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2273.6328125%22%20y%3D%22104.5%22%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')">
-                            <label for="image" class="thumbnail-btn">
+                        <div id="thumbnail" class="thumbnail"
+                             style="background-image: url('/assets/img/user.png')">
+                            <label for="loadImage" class="thumbnail-btn">
                                 <span class="btn btn-primary"><i class="fas fa-image"></i></span>
                             </label>
-                            <input onchange="saveImage()" accept="image/*" style="display: none" type="file" id="image" name="image">
+                            <input accept="image/*" style="display: none" type="file" id="loadImage">
+                            <input type="hidden" name="image" id="image">
                         </div>
                     </div>
 
                     <div class="row title-service">
                         <div class="col-md-12">
                             <p class="text-center">
-                                <button type="submit" class="btn btn-success">Enregistrer</button>
+                                <button type="submit" id="save" class="btn btn-success">Enregistrer</button>
                             </p>
                             <p class="text-center">
-                                <a href="/clients.php" class="btn btn-danger">Annuler</a>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target=".bd-example-modal-sm">Annuler</button>
                             </p>
+                            <!-- Modal -->
+                            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-sm modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-footer">
+                                            <span>Annuler la création d'un nouveau client. Procéder?</span>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
+                                            <a href="/clients.php" class="btn btn-danger">Oui</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal -->
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md 11">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th><small>Fichiers (word, Excel, PDF)</small></th>
+                                    <th class="col-btn">
+                                        <label for="files" class="btn btn-success btn-sm"><i
+                                                    class="fas fa-plus"></i></label>
+                                        <input type="file" id="files" style="display: none">
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id='filesTable'></tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -37,14 +66,12 @@
 
                     <div class="form-group">
                         <label for="firstName">Prénom</label>
-                        <input name="firstName" type="text" class="form-control" id="firstName"
-                               aria-describedby="emailHelp">
+                        <input name="firstName" type="text" class="form-control" id="firstName">
                     </div>
 
                     <div class="form-group">
                         <label for="lastName">Nom</label>
-                        <input name="lastName" type="text" class="form-control" id="lastName"
-                               aria-describedby="emailHelp">
+                        <input name="lastName" type="text" class="form-control" id="lastName">
                     </div>
 
                     <div class="form-group">
@@ -60,7 +87,7 @@
                     <div class="form-group">
                         <label for="country">Pays d’origine</label>
                         <select class="form-control" name="country" id="country">
-                            <?php foreach($countries as $country): ?>
+                            <?php foreach ($countries as $country): ?>
                                 <option value="<?php echo $country; ?>"><?php echo $country; ?></option>
                             <?php endforeach; ?>
                         </select>
@@ -69,7 +96,7 @@
                     <div class="form-group">
                         <label for="age">Agê</label>
                         <select class="form-control" name="age" id="age">
-                            <?php foreach($ages as $age): ?>
+                            <?php foreach ($ages as $age): ?>
                                 <option value="<?php echo $age; ?>"><?php echo $age; ?></option>
                             <?php endforeach; ?>
                         </select>
@@ -114,7 +141,7 @@
                     <div class="form-group">
                         <label for="statut">Statut</label>
                         <select class="form-control" name="statut" id="statut">
-                            <?php foreach($statut as $st): ?>
+                            <?php foreach ($statut as $st): ?>
                                 <option value="<?php echo $st; ?>"><?php echo $st; ?></option>
                             <?php endforeach; ?>
                         </select>
@@ -123,7 +150,7 @@
                     <div class="form-group">
                         <label for="status">Statut d'immigration</label>
                         <select class="form-control" name="status" id="status">
-                            <?php foreach($stats as $sts): ?>
+                            <?php foreach ($stats as $sts): ?>
                                 <option value="<?php echo $sts; ?>"><?php echo $sts; ?></option>
                             <?php endforeach; ?>
                         </select>
@@ -132,7 +159,7 @@
                     <div class="form-group">
                         <label for="situation">Situation actuelle</label>
                         <select class="form-control" name="situation" id="situation">
-                            <?php foreach($situation as $sit): ?>
+                            <?php foreach ($situation as $sit): ?>
                                 <option value="<?php echo $sit; ?>"><?php echo $sit; ?></option>
                             <?php endforeach; ?>
                         </select>
@@ -154,7 +181,7 @@
                     <div class="form-group">
                         <label for="cle">CLE</label>
                         <select class="form-control" name="cle" id="cle">
-                            <?php foreach($cle as $c): ?>
+                            <?php foreach ($cle as $c): ?>
                                 <option value="<?php echo $c; ?>"><?php echo $c; ?></option>
                             <?php endforeach; ?>
                         </select>
@@ -333,7 +360,26 @@
     </div>
 
     <script>
-        $(".datepicker").datepicker();
+        // load jquery ui datapicker
+            $( ".datepicker" ).datepicker( );
+
+        // check if firstName and lastName are valid before submit
+        $('#save').click(function(event){
+            let firstName = $('#firstName');
+            let lastName = $('#lastName');
+            if(firstName.val() === ''){
+                event.preventDefault();
+                firstName.css({border: '1px solid red'})
+                lastName.css({border: '1px solid lightgrey'})
+            }else if(lastName.val() === ''){
+                event.preventDefault();
+                firstName.css({border: '1px solid lightgrey'})
+                lastName.css({border: '1px solid red'})
+            }
+        });
+
+
+        // remove row from tables
         $(document).on('click', '.remove', function () {
             $(this).closest('tr').remove();
         });
@@ -459,6 +505,74 @@
             $('#table7').append(html);
             $(".datepicker").datepicker();
         });
+
+        // save image
+        $(document).on('change', '#loadImage', function(){
+            let image = $(this).prop("files")[0];
+
+            if (image.type === 'image/jpeg' || image.type === 'image/png') {
+                let form_data = new FormData();
+                form_data.append("image", image);
+
+                $.ajax({
+                    url: "/actions/uploadImage.php",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    data: form_data,
+                    type: 'post',
+                    success: function (data) {
+                        let info = JSON.parse(data)
+                        if (data) {
+                            $('#image').val(info['url']);
+                            $('#thumbnail').css({backgroundImage: `url(${info['url']})`});
+                        }
+                    }
+                });
+            }
+
+        });
+
+        // save file added
+        $(document).on('change', '#files', function () {
+            let file = $(this).prop("files")[0];
+
+            if (file.type === 'application/pdf'
+                || file.type === 'application/doc'
+                || file.type === 'application/msword'
+                || file.type === 'application/ms-doc'
+                || file.type === 'application/excel'
+                || file.type === 'application/vnd.ms-excel'
+                || file.type === 'application/x-excel'
+                || file.type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+                || file.type === 'application/x-msexcel'
+                || file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') {
+
+                let form_data = new FormData();
+                form_data.append("file", file);
+                $.ajax({
+                    url: "/actions/uploadFile.php",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    data: form_data,
+                    type: 'post',
+                    success: function (data) {
+                        let info = JSON.parse(data)
+                        if (data) {
+                            let html = `<tr><td>`;
+                            html += `<a href="${info.url}" ><small>${info.filename.substring(info.filename.length - 18, info.filename.length)}</small><a>`;
+                            html += `<input type="hidden" value="${info.filename}" name='file_name[]'>`;
+                            html += `<input type="hidden" value="${info.url}" name='file_url[]'>`;
+                            html += `</td>`;
+                            html += `<td><span class="btn btn-danger btn-sm remove"><i class="fas fa-trash"></i></span></td>`;
+                            html += `</tr>`;
+                            $('#filesTable').append(html);
+                        }
+                    }
+                });
+            }
+        })
     </script>
 
 <?php require_once 'parts/footer.php' ?>
