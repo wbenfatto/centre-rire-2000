@@ -1,5 +1,10 @@
 <?php require_once 'parts/header.php'; ?>
 <?php require_once 'actions/clients/search.php'; ?>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Clients</li>
+    </ol>
+</nav>
 <?php if (isset($_COOKIE['created'])): ?>
     <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
         <strong>Le client a été créé avec succès!</strong>
@@ -16,11 +21,6 @@
         </button>
     </div>
 <?php endif; ?>
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item active" aria-current="page">Clients</li>
-    </ol>
-</nav>
 <form action="/clients.php" method="post">
 <div class="col-md-8 offset-md-2 searchField">
     <div class="input-group mb-3">
@@ -74,3 +74,4 @@
     </div>
 </div>
 
+<?php require_once 'parts/footer.php';

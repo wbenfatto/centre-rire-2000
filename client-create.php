@@ -7,7 +7,7 @@
         </ol>
     </nav>
     <div class="container-fluid">
-        <form id="form" method="post" action="/actions/clients/create.php" autocomplete="off" enctype="multipart/form-data">
+        <form id="form" method="post" action="/actions/clients/create.php" autocomplete="off">
             <div class="row">
                 <div class="col-md-2">
                     <div class="row">

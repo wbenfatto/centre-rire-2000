@@ -12,6 +12,8 @@ input:focus, input.form-control:focus {
     -webkit-box-shadow: none;
 }
 
+
+
 .title-service{
     margin-top: 50px;
     margin-bottom: 20px;
@@ -30,10 +32,11 @@ input:focus, input.form-control:focus {
 }
 
 .footer{
-    margin-top: 150px;
     height: 30px;
     background-color: #444;
+    margin-top:50px;
 }
+
 
 .table{
     margin-bottom: 30px;
@@ -70,4 +73,17 @@ input:focus, input.form-control:focus {
 
 .fa-info-circle{
     font-size: 26px;
+}
+
+.fa-users,
+.fa-briefcase,
+.fa-chart-pie,
+.fa-calendar-alt,
+.fa-sign-out-alt{
+    font-size: 32px;
+    margin: 0 10px;
+}
+
+.container-fluid{
+    min-height: calc(100vh - 352px);
 }
