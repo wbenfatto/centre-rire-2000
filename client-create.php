@@ -362,7 +362,7 @@
     <script>
         $(document).ready(function(){
             // load jquery ui datapicker
-            $( ".datepicker" ).datepicker();
+            $( ".datepicker" ).datepicker({changeMonth: true, changeYear: true, yearRange: "-100:+5"});
 
             // masks
             $('#phone1, #phone2').mask('000-000-00000');
@@ -405,7 +405,7 @@
             html += `</tr>`;
 
             $('#table1').append(html);
-            $(".datepicker").datepicker();
+            $( ".datepicker" ).datepicker({changeMonth: true, changeYear: true, yearRange: "-100:+5"});
         });
 
         // Table 2
@@ -423,7 +423,7 @@
             html += `</tr>`;
 
             $('#table2').append(html);
-            $(".datepicker").datepicker();
+            $( ".datepicker" ).datepicker({changeMonth: true, changeYear: true, yearRange: "-100:+5"});
         });
 
         // TABLE 3
@@ -441,7 +441,7 @@
             html += `</tr>`;
 
             $('#table3').append(html);
-            $(".datepicker").datepicker();
+            $( ".datepicker" ).datepicker({changeMonth: true, changeYear: true, yearRange: "-100:+5"});
         });
 
         // table 4
@@ -459,7 +459,7 @@
             html += `</tr>`;
 
             $('#table4').append(html);
-            $(".datepicker").datepicker();
+            $( ".datepicker" ).datepicker({changeMonth: true, changeYear: true, yearRange: "-100:+5"});
         });
 
         // table 5
@@ -477,7 +477,7 @@
             html += `</tr>`;
 
             $('#table5').append(html);
-            $(".datepicker").datepicker();
+            $( ".datepicker" ).datepicker({changeMonth: true, changeYear: true, yearRange: "-100:+5"});
         });
 
         // table 6
@@ -495,7 +495,7 @@
             html += `</tr>`;
 
             $('#table6').append(html);
-            $(".datepicker").datepicker();
+            $( ".datepicker" ).datepicker({changeMonth: true, changeYear: true, yearRange: "-100:+5"});
         });
 
         // table 7
@@ -509,7 +509,7 @@
             html += `</tr>`;
 
             $('#table7').append(html);
-            $(".datepicker").datepicker();
+            $( ".datepicker" ).datepicker({changeMonth: true, changeYear: true, yearRange: "-100:+5"});
         });
 
         // save image
