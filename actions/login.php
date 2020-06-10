@@ -1,1 +1,1 @@
-<?php
+<?php header('Location: /clients.php'); ?>
