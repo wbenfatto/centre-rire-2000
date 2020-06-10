@@ -87,3 +87,7 @@ input:focus, input.form-control:focus {
 .container-fluid{
     min-height: calc(100vh - 352px);
 }
+
+.btn-outline-secondary{
+    border: 1px solid #ccc;
+}

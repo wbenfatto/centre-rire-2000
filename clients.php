@@ -46,7 +46,7 @@
                 <th>Téléphone 2</th>
                 <th>Courriel</th>
                 <th>Formations</th>
-                <th><a class="btn btn-success btn-sm" href="/client-create.php"><i class="fas fa-plus"></i></a></th>
+                <th><a class="btn btn-success" href="/client-create.php"><i class="fas fa-user-plus"></i></a></th>
             </tr>
             </thead>
             <tbody>

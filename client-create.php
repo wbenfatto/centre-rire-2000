@@ -188,7 +188,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="found">Comment avez-vous entendu parler du <br>Centre R.I.R.E. 2000?</label>
+                        <label for="found">Comment avez-vous entendu parler du Centre R.I.R.E. 2000?</label>
                         <input type="text" name="found" class="form-control" id="found">
                     </div>
 
@@ -360,8 +360,14 @@
     </div>
 
     <script>
-        // load jquery ui datapicker
-            $( ".datepicker" ).datepicker( );
+        $(document).ready(function(){
+            // load jquery ui datapicker
+            $( ".datepicker" ).datepicker();
+
+            // masks
+            $('#phone1, #phone2').mask('000-000-00000');
+            $('#nas').mask('000 000 000');
+        })
 
         // check if firstName and lastName are valid before submit
         $('#save').click(function(event){

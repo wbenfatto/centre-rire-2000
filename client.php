@@ -36,6 +36,8 @@
                     </div>
                 </div>
 
+                <div class="text-center">Début: <?php echo date("d/m/Y", strtotime($client["start"])) ?></div>
+
                 <div class="row title-service">
                     <div class="col-md-12">
                         <p class="text-center">
@@ -229,7 +231,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="found">Comment avez-vous entendu parler du <br>Centre R.I.R.E. 2000?</label>
+                    <label for="found">Comment avez-vous entendu parler du Centre R.I.R.E. 2000?</label>
                     <input type="text" name="found" class="form-control" id="found" value="<?php echo $client['found']; ?>">
                 </div>
 
@@ -519,7 +521,14 @@
 </div>
 
 <script>
-    $(".datepicker").datepicker();
+    $(document).ready(function(){
+        // load jquery ui datapicker
+        $( ".datepicker" ).datepicker();
+
+        // masks
+        $('#phone1, #phone2').mask('000-000-00000');
+        $('#nas').mask('000 000 000');
+    })
 
     // remove row from tables
     $(document).on('click', '.remove', function () {
