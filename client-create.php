@@ -49,10 +49,10 @@
                             <table class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th><small>Fichiers (word, Excel, PDF)</small></th>
+                                    <th><small>Fichiers <br>(word, Excel, PDF)</small></th>
                                     <th class="col-btn">
-                                        <label for="files" class="btn btn-success btn-sm"><i
-                                                    class="fas fa-plus"></i></label>
+                                        <label for="files" class="btn btn-success btn-xs"><i
+                                                    class="fas fa-folder-plus"></i></label>
                                         <input type="file" id="files" style="display: none">
                                     </th>
                                 </tr>
