@@ -106,7 +106,7 @@ input:focus, input.form-control:focus {
     width: 100%;
     top:0;
     padding-top: 50px;
-    height: 100vh;
+    height: 120vh;
     background: url("/assets/img/login_background.jpg") fixed no-repeat, center center;
     background-size: cover;
 }

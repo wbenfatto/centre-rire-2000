@@ -6,3 +6,5 @@
 - Import the cr2kDB.sql into the database
 - Copy all files into the root folder
 - Edit the file DB.php: modify host, user and password credentials
+
+##### Default Password: 123
