@@ -34,7 +34,7 @@ input:focus, input.form-control:focus {
 .footer{
     height: 30px;
     background-color: #444;
-    margin-top:50px;
+    /*margin-top:50px;*/
 }
 
 
@@ -84,10 +84,66 @@ input:focus, input.form-control:focus {
     margin: 0 10px;
 }
 
+.center{
+    text-align: center;
+}
+
 .container-fluid{
-    min-height: calc(100vh - 352px);
+    min-height: 75vh;
 }
 
 .btn-outline-secondary{
     border: 1px solid #ccc;
+}
+
+.login-card{
+    width: 300px;
+    margin: 0 auto;
+}
+
+.login-container{
+    position: relative;
+    width: 100%;
+    top:0;
+    padding-top: 50px;
+    height: 100vh;
+    background: url("/assets/img/login_background.jpg") fixed no-repeat, center center;
+    background-size: cover;
+}
+
+.card-header{
+ text-align: center;
+    background-color: white;
+    border: none;
+}
+
+.card-header img{
+    width: 150px;
+}
+
+.card-body{
+    padding-top: 0;
+}
+
+.login-label{
+    color: #666666;
+    font-weight: bold;
+}
+
+.login-card2{
+    margin-top: 20px;
+}
+
+.change-pass{
+    float: right;
+    cursor: pointer;
+}
+
+#changePassword{
+    display: none;
+}
+
+.text-left{
+    float: left;
+    color: #666666;
 }

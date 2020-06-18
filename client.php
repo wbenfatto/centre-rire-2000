@@ -1,4 +1,5 @@
 <?php require_once 'parts/header.php'; ?>
+<?php include_once 'parts/navbar.php'; ?>
 <?php require_once 'actions/clients/read.php'; ?>
 <?php require_once 'parts/options.php'; ?>
 <?php if(!isset($client) || $client === false) header('Location: /clients.php') ?>

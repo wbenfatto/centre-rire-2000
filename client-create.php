@@ -1,4 +1,5 @@
 <?php require_once 'parts/header.php'; ?>
+<?php include_once 'parts/navbar.php'; ?>
 <?php require_once 'parts/options.php'; ?>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
