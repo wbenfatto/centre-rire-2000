@@ -21,26 +21,26 @@
                     <small class="text-primary change-pass" id="showChangePass">Changer mot de passe</small>
                 </form>
             </div>
-        </div>
-        <div class="card login-card login-card2" id="changePassword">
-            <div class="card-header">
-                <div class="form-group">
-                    <label for="oldPass" class="text-left"><small>Mot de passe actuel</small></label>
-                    <input id="oldPass" name="oldPass" type="password" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="NewPass" class="text-left"><small>Nouveau mot de passe</small></label>
-                    <input id="newPass" name="newPass" type="password" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="repeatPass" class="text-left"><small>Répéter le nouveau mot de passe</small></label>
-                    <input id="repeatPass" type="password" class="form-control">
-                </div>
-                <p>
-                    <small id="changeMsg" class="form-text text-muted"></small>
-                </p>
-                <div class="center">
-                    <button class="btn btn-primary" type="button" id="changePassBtn">Mettre à jour</button>
+            <div class="card login-card login-card2" id="changePassword">
+                <div class="card-header">
+                    <div class="form-group">
+                        <label for="oldPass" class="text-left"><small>Mot de passe actuel</small></label>
+                        <input id="oldPass" name="oldPass" type="password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="NewPass" class="text-left"><small>Nouveau mot de passe</small></label>
+                        <input id="newPass" name="newPass" type="password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="repeatPass" class="text-left"><small>Répéter le nouveau mot de passe</small></label>
+                        <input id="repeatPass" type="password" class="form-control">
+                    </div>
+                    <p>
+                        <small id="changeMsg" class="form-text text-muted"></small>
+                    </p>
+                    <div class="center">
+                        <button class="btn btn-primary" type="button" id="changePassBtn">Mettre à jour</button>
+                    </div>
                 </div>
             </div>
         </div>
