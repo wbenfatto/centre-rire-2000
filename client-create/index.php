@@ -1,14 +1,14 @@
-<?php require_once 'parts/header.php'; ?>
-<?php include_once 'parts/navbar.php'; ?>
-<?php require_once 'parts/options.php'; ?>
+<?php require_once '../parts/header.php'; ?>
+<?php include_once '../parts/navbar.php'; ?>
+<?php require_once '../parts/options.php'; ?>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/clients.php">Clients</a></li>
+            <li class="breadcrumb-item"><a href="/clients/">Clients</a></li>
             <li class="breadcrumb-item active" aria-current="page">Nouveau Client</li>
         </ol>
     </nav>
     <div class="container-fluid">
-        <form id="form" method="post" action="/actions/clients/create.php" autocomplete="off">
+        <form id="form" method="post" action="/client-create/create.php" autocomplete="off">
             <div class="row">
                 <div class="col-md-2">
                     <div class="row">
@@ -37,7 +37,7 @@
                                         <div class="modal-footer">
                                             <span>Annuler la création d'un nouveau client. Procéder?</span>
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
-                                            <a href="/clients.php" class="btn btn-danger">Oui</a>
+                                            <a href="/clients/" class="btn btn-danger">Oui</a>
                                         </div>
                                     </div>
                                 </div>
@@ -582,4 +582,4 @@
         })
     </script>
 
-<?php require_once 'parts/footer.php' ?>
+<?php require_once '../parts/footer.php' ?>

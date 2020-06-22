@@ -1,6 +1,6 @@
-<?php require_once 'parts/header.php'; ?>
-<?php include_once 'parts/navbar.php'; ?>
-<?php require_once 'actions/clients/search.php'; ?>
+<?php require_once '../parts/header.php'; ?>
+<?php include_once '../parts/navbar.php'; ?>
+<?php require_once 'search.php'; ?>
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item active" aria-current="page">Clients</li>
@@ -22,7 +22,7 @@
         </button>
     </div>
 <?php endif; ?>
-<form action="/clients.php" method="post">
+<form action="/clients/" method="post">
 <div class="col-md-8 offset-md-2 searchField">
     <div class="input-group mb-3">
             <input name="search" type="text" class="form-control" placeholder="Chercher des clients...">
@@ -47,7 +47,7 @@
                 <th>Téléphone 2</th>
                 <th>Courriel</th>
                 <th>Formations</th>
-                <th><a class="btn btn-success" href="/client-create.php"><i class="fas fa-user-plus"></i></a></th>
+                <th><a class="btn btn-success" href="/client-create/"><i class="fas fa-user-plus"></i></a></th>
             </tr>
             </thead>
             <tbody>
@@ -64,7 +64,7 @@
                         <span><?php print_r($c['ta']) ?></span><br>
                         <?php endforeach; ?>
                     </td>
-                    <th><a href="/client.php?id=<?php echo $client['id']; ?>" class="btn btn-primary btn-sm">
+                    <th><a href="/client/?id=<?php echo $client['id']; ?>" class="btn btn-primary btn-sm">
                             <i class="fas fa-info-circle"></i>
                         </a>
                     </th>
@@ -75,4 +75,4 @@
     </div>
 </div>
 
-<?php require_once 'parts/footer.php';
+<?php require_once '../parts/footer.php';

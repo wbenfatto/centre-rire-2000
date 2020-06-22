@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 date_default_timezone_set('America/Toronto');
-require_once '../../DB.php';
+require_once '../DB.php';
 
 $db = new DB();
 $pdo = $db->connect();
@@ -125,5 +125,5 @@ try {
     die("Error updating files: " . $e->getMessage());
 }
 
-setcookie("msg", "ok", time() + 3, "/client.php");
-header('Location: /client.php?id=' . $id);
+setcookie("msg", "ok", time() + 3, "/client/");
+header('Location: /client/?id=' . $id);

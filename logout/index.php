@@ -17,7 +17,7 @@ if(isset($_POST['password'])){
 
     if(md5($password) === $result['pass']){
         $_SESSION['login'] = true;
-        header('Location: /clients.php');
+        header('Location: /clients/');
     }else{
         setcookie('msg', 'error', time() + 1, '/');
         $_SESSION['login'] = false;

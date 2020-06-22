@@ -6,7 +6,7 @@
                 <img src="/assets/img/login_logo.jpg" alt="cr2k">
             </div>
             <div class="card-body">
-                <form action="/actions/login.php" method="post">
+                <form action="/logout/" method="post">
                     <div class="form-group center">
                         <label for="password" class="login-label">Mot de Passe</label>
                         <input name="password" type="password" class="form-control" id="password">
@@ -61,7 +61,7 @@
                 (newPass.val() !== repeatPass.val()) ? repeatPass.css({border: '1px solid red'}) : repeatPass.css({border: '1px solid lightgray'});
 
                 if (oldPass.val() !== '' && newPass.val() !== '' && newPass.val() === repeatPass.val()) {
-                    $.post('/actions/changePassword.php', {oldPass: oldPass.val(), newPass: newPass.val()}, function(data){
+                    $.post('/logout/changePassword.php', {oldPass: oldPass.val(), newPass: newPass.val()}, function(data){
                         $('#changeMsg').text(data);
                     })
                 }

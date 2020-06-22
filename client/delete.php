@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 date_default_timezone_set('America/Toronto');
-require_once '../../DB.php';
+require_once '../DB.php';
 
 $db = new DB();
 $pdo = $db->connect();
@@ -38,5 +38,5 @@ if(isset($_GET['id'])){
         }
     }
 }
-setcookie("deleted", "ok", time() + 3, "/clients.php");
-header('Location: /clients.php');
+setcookie("deleted", "ok", time() + 3, "/clients/");
+header('Location: /clients/');

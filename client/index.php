@@ -1,13 +1,13 @@
-<?php require_once 'parts/header.php'; ?>
-<?php include_once 'parts/navbar.php'; ?>
-<?php require_once 'actions/clients/read.php'; ?>
-<?php require_once 'parts/options.php'; ?>
-<?php if(!isset($client) || $client === false) header('Location: /clients.php') ?>
+<?php require_once '../parts/header.php'; ?>
+<?php include_once '../parts/navbar.php'; ?>
+<?php require_once 'read.php'; ?>
+<?php require_once '../parts/options.php'; ?>
+<?php if(!isset($client) || $client === false) header('Location: /clients/') ?>
 
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/clients.php">Clients</a></li>
+        <li class="breadcrumb-item"><a href="/clients/">Clients</a></li>
         <li class="breadcrumb-item active" aria-current="page">
             <?php echo $client['firstName'] .' '. $client['lastName']; ?>
         </li>
@@ -22,7 +22,7 @@
     </div>
 <?php endif; ?>
 <div class="container-fluid">
-    <form id="form" method="post" action="/actions/clients/update.php" autocomplete="off">
+    <form id="form" method="post" action="/client/update.php" autocomplete="off">
         <input type="hidden" name="id" value="<?php echo $client['id'] ?>">
         <div class="row">
             <div class="col-md-2">
@@ -55,7 +55,7 @@
                                     <div class="modal-footer">
                                         <span>Toutes les données client seront supprimées. Procéder?</span>
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
-                                        <a href="/actions/clients/delete.php?id=<?php echo $client['id'] ?>" class="btn btn-danger">Oui</a>
+                                        <a href="/client/delete.php?id=<?php echo $client['id'] ?>" class="btn btn-danger">Oui</a>
                                     </div>
                                 </div>
                             </div>
@@ -730,4 +730,4 @@
 
 </script>
 
-<?php require_once 'parts/footer.php' ?>
+<?php require_once '../parts/footer.php' ?>

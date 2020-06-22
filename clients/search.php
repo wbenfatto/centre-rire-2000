@@ -1,6 +1,6 @@
 <?php
 date_default_timezone_set('America/Toronto');
-require_once 'DB.php';
+require_once '../DB.php';
 
 $db = new DB();
 $pdo = $db->connect();
