@@ -21,7 +21,7 @@
                             <input type="hidden" name="image" id="image">
                         </div>
                     </div>
-
+                    <div class="text-center"><small><?php echo date('d/m/Y'); ?></small></div>
                     <div class="row title-service">
                         <div class="col-md-12">
                             <p class="text-center">

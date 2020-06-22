@@ -37,7 +37,7 @@
                     </div>
                 </div>
 
-                <div class="text-center">Début: <?php echo date("d/m/Y", strtotime($client["start"])) ?></div>
+                <div class="text-center"><small>Début: <?php echo date("d/m/Y", strtotime($client["start"])) ?></small></div>
 
                 <div class="row title-service">
                     <div class="col-md-12">

@@ -22,7 +22,7 @@
         </button>
     </div>
 <?php endif; ?>
-<form action="/clients/" method="post">
+<form action="/clients/" method="post" autocomplete="off">
 <div class="col-md-8 offset-md-2 searchField">
     <div class="input-group mb-3">
             <input name="search" type="text" class="form-control" placeholder="Chercher des clients...">
@@ -64,10 +64,10 @@
                         <span><?php print_r($c['ta']) ?></span><br>
                         <?php endforeach; ?>
                     </td>
-                    <th><a href="/client/?id=<?php echo $client['id']; ?>" class="btn btn-primary btn-sm">
+                    <td><a href="/client/?id=<?php echo $client['id']; ?>" class="btn btn-primary btn-sm">
                             <i class="fas fa-info-circle"></i>
                         </a>
-                    </th>
+                    </td>
                 </tr>
             <?php endforeach; ?>
             </tbody>

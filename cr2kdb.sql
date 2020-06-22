@@ -72,7 +72,7 @@ CREATE TABLE `clients` (
   `profile` mediumtext NOT NULL,
   `objectives` mediumtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -82,6 +82,55 @@ CREATE TABLE `clients` (
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `companies`
+--
+
+DROP TABLE IF EXISTS `companies`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `companies` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `start` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `image` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `sectorActivity` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `numEmployee` int DEFAULT NULL,
+  `numImmigrants` int DEFAULT NULL,
+  `sectorJob` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `check1` tinyint(1) DEFAULT '0',
+  `check2` tinyint(1) DEFAULT '0',
+  `check3` tinyint(1) DEFAULT '0',
+  `check4` tinyint(1) DEFAULT '0',
+  `check5` tinyint(1) DEFAULT '0',
+  `check6` tinyint(1) DEFAULT '0',
+  `check7` tinyint(1) DEFAULT '0',
+  `check8` tinyint(1) DEFAULT '0',
+  `check9` tinyint(1) DEFAULT '0',
+  `person` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '0',
+  `position` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `phone1` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `phone2` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `remarks` mediumtext CHARACTER SET utf8 COLLATE utf8_general_ci,
+  `radio1` tinyint(1) DEFAULT '0',
+  `radio2` tinyint(1) DEFAULT '0',
+  `radio3` tinyint(1) DEFAULT '0',
+  `radio4` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `companies`
+--
+
+LOCK TABLES `companies` WRITE;
+/*!40000 ALTER TABLE `companies` DISABLE KEYS */;
+/*!40000 ALTER TABLE `companies` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -107,6 +156,31 @@ CREATE TABLE `files` (
 LOCK TABLES `files` WRITE;
 /*!40000 ALTER TABLE `files` DISABLE KEYS */;
 /*!40000 ALTER TABLE `files` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `files2`
+--
+
+DROP TABLE IF EXISTS `files2`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `files2` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `company_id` int NOT NULL,
+  `filename` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `files2`
+--
+
+LOCK TABLES `files2` WRITE;
+/*!40000 ALTER TABLE `files2` DISABLE KEYS */;
+/*!40000 ALTER TABLE `files2` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -151,7 +225,7 @@ CREATE TABLE `table2` (
   `tc` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `td` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -307,4 +381,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-18 12:35:39
+-- Dump completed on 2020-06-22 12:25:34

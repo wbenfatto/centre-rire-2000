@@ -7,9 +7,11 @@ $pdo = $db->connect();
 
 $search = isset($_POST['search']) ? $_POST['search'] : '';
 
+$clients = array();
+
 try {
     $stmt = $pdo->prepare("SELECT id, start, firstName, lastName, phone1, phone2, email 
-                            FROM clients WHERE firstName LIKE ? LIMIT 25");
+                            FROM clients WHERE concat(firstName, lastName, phone1, phone2, email) LIKE ? LIMIT 25");
     $stmt->execute(array('%'.$search.'%'));
     $clients = $stmt->fetchAll();
 
