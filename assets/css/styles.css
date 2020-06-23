@@ -155,3 +155,7 @@ input:focus, input.form-control:focus {
 .extra-top2{
     margin-top: 54px;
 }
+
+.container-agenda{
+    margin-bottom: 50px;
+}

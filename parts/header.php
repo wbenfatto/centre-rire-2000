@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/jquery-ui.min.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/jqx.base.css">
+    <link rel="stylesheet" href="/assets/css/jqx.light.css">
     <script src="/assets/js/jquery-3.5.1.min.js"></script>
     <script src="/assets/js/jquery-ui.min.js"></script>
     <script src="/assets/js/datepicker-fr.js"></script>
