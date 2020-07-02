@@ -72,14 +72,21 @@ if ($stmt->rowCount() > 0) {
         if (isset($_POST['table' . $x . '_a'])) {
             for ($y = 0; $y < count($_POST['table' . $x . '_a']); $y++) {
                 try {
+
+                    $ta = $_POST['table' . $x . '_a'][$y];
+                    $tb = convertDate($_POST['table' . $x . '_b'][$y]);
+                    $tc = convertDate($_POST['table' . $x . '_c'][$y]);
+                    $td = $_POST['table' . $x . '_d'][$y];
+
+
                     $table = 'table' . $x;
                     $stmt = $pdo->prepare("INSERT INTO `$table` (client_id, ta, tb, tc, td)
                             VALUES (:client_id, :ta, :tb, :tc, :td)");
                     $stmt->bindParam(':client_id', $client_id);
-                    $stmt->bindParam(':ta', $_POST['table' . $x . '_a'][$y]);
-                    $stmt->bindParam(':tb', $_POST['table' . $x . '_b'][$y]);
-                    $stmt->bindParam(':tc', $_POST['table' . $x . '_c'][$y]);
-                    $stmt->bindParam(':td', $_POST['table' . $x . '_d'][$y]);
+                    $stmt->bindParam(':ta', $ta);
+                    $stmt->bindParam(':tb', $tb);
+                    $stmt->bindParam(':tc', $tc);
+                    $stmt->bindParam(':td', $td);
 
                     $stmt->execute();
 
@@ -119,3 +126,7 @@ if ($stmt->rowCount() > 0) {
 
 
 
+function convertDate($date){
+    $str = str_replace('/', '-', $date);
+    return date('Y-m-d', strtotime($str));
+}

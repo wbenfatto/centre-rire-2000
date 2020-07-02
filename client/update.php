@@ -80,14 +80,20 @@ for ($x = 1; $x <= 7; $x++) {
 
     if (isset($_POST['table' . $x . '_a'])) {
         for ($y = 0; $y < count($_POST['table' . $x . '_a']); $y++) {
+
+            $ta = $_POST['table' . $x . '_a'][$y];
+            $tb = convertDate($_POST['table' . $x . '_b'][$y]);
+            $tc = convertDate($_POST['table' . $x . '_c'][$y]);
+            $td = $_POST['table' . $x . '_d'][$y];
+
             try {
                 $stmt = $pdo->prepare("INSERT INTO `$table` (client_id, ta, tb, tc, td)
                             VALUES (:client_id, :ta, :tb, :tc, :td)");
                 $stmt->bindParam(':client_id', $id);
-                $stmt->bindParam(':ta', $_POST['table' . $x . '_a'][$y]);
-                $stmt->bindParam(':tb', $_POST['table' . $x . '_b'][$y]);
-                $stmt->bindParam(':tc', $_POST['table' . $x . '_c'][$y]);
-                $stmt->bindParam(':td', $_POST['table' . $x . '_d'][$y]);
+                $stmt->bindParam(':ta', $ta);
+                $stmt->bindParam(':tb', $tb);
+                $stmt->bindParam(':tc', $tc);
+                $stmt->bindParam(':td', $td);
 
                 $stmt->execute();
 
@@ -127,3 +133,8 @@ try {
 
 setcookie("msg", "ok", time() + 3, "/client/");
 header('Location: /client/?id=' . $id);
+
+function convertDate($date){
+    $str = str_replace('/', '-', $date);
+    return date('Y-m-d', strtotime($str));
+}

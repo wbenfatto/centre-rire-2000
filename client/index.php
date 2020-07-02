@@ -69,8 +69,7 @@
                             <thead>
                             <tr>
                                 <th><small>Fichiers <br> (word, Excel, PDF)</small></th>
-                                <th class="col-btn"radores
-                                >
+                                <th class="col-btn">
                                     <label for="files" class="btn btn-success btn-xs"><i
                                             class="fas fa-folder-plus"></i></label>
                                     <input type="file" id="files" style="display: none">
@@ -283,8 +282,8 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </td>
-                                <td><input value="<?php echo $row['tb'] ?>" type="text" name="table1_b[]" class="form-control datepicker"></td>
-                                <td><input value="<?php echo $row['tc'] ?>" type="text" name="table1_c[]" class="form-control datepicker"></td>
+                                <td><input value="<?php echo date("d/m/Y", strtotime($row['tb'])) ?>" type="text" name="table1_b[]" class="form-control datepicker"></td>
+                                <td><input value="<?php echo date("d/m/Y", strtotime($row['tc']))?>" type="text" name="table1_c[]" class="form-control datepicker"></td>
                                 <td><input value="<?php echo $row['td'] ?>" type="text" name="table1_d[]" class="form-control"></td>
                                 <td><button type="button" class="btn btn-danger btn-xs remove"><span class="fas fa-trash"></span></button></td>
                             </tr>
@@ -321,8 +320,8 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </td>
-                                <td><input value="<?php echo $row['tb'] ?>" type="text" name="table2_b[]" class="form-control datepicker"></td>
-                                <td><input value="<?php echo $row['tc'] ?>" type="text" name="table2_c[]" class="form-control datepicker"></td>
+                                <td><input value="<?php echo date("d/m/Y", strtotime($row['tb'])) ?>" type="text" name="table2_b[]" class="form-control datepicker"></td>
+                                <td><input value="<?php echo date("d/m/Y", strtotime($row['tc'])) ?>" type="text" name="table2_c[]" class="form-control datepicker"></td>
                                 <td><input value="<?php echo $row['td'] ?>" type="text" name="table2_d[]" class="form-control"></td>
                                 <td><button type="button" class="btn btn-danger btn-xs remove"><span class="fas fa-trash"></span></button></td>
                             </tr>
@@ -359,8 +358,8 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </td>
-                                <td><input value="<?php echo $row['tb'] ?>" type="text" name="table3_b[]" class="form-control datepicker"></td>
-                                <td><input value="<?php echo $row['tc'] ?>" type="text" name="table3_c[]" class="form-control datepicker"></td>
+                                <td><input value="<?php echo date("d/m/Y", strtotime($row['tb'])) ?>" type="text" name="table3_b[]" class="form-control datepicker"></td>
+                                <td><input value="<?php echo date("d/m/Y", strtotime($row['tc'])) ?>" type="text" name="table3_c[]" class="form-control datepicker"></td>
                                 <td><input value="<?php echo $row['td'] ?>" type="text" name="table3_d[]" class="form-control"></td>
                                 <td><button type="button" class="btn btn-danger btn-xs remove"><span class="fas fa-trash"></span></button></td>
                             </tr>
@@ -398,8 +397,8 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </td>
-                                <td><input value="<?php echo $row['tb'] ?>" type="text" name="table4_b[]" class="form-control datepicker"></td>
-                                <td><input value="<?php echo $row['tc'] ?>" type="text" name="table4_c[]" class="form-control datepicker"></td>
+                                <td><input value="<?php echo date("d/m/Y", strtotime($row['tb'])) ?>" type="text" name="table4_b[]" class="form-control datepicker"></td>
+                                <td><input value="<?php echo date("d/m/Y", strtotime($row['tc'])) ?>" type="text" name="table4_c[]" class="form-control datepicker"></td>
                                 <td><input value="<?php echo $row['td'] ?>" type="text" name="table4_d[]" class="form-control"></td>
                                 <td><button type="button" class="btn btn-danger btn-xs remove"><span class="fas fa-trash"></span></button></td>
                             </tr>
@@ -436,8 +435,8 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </td>
-                                <td><input value="<?php echo $row['tb'] ?>" type="text" name="table5_b[]" class="form-control datepicker"></td>
-                                <td><input value="<?php echo $row['tc'] ?>" type="text" name="table5_c[]" class="form-control datepicker"></td>
+                                <td><input value="<?php echo date("d/m/Y", strtotime($row['tb'])) ?>" type="text" name="table5_b[]" class="form-control datepicker"></td>
+                                <td><input value="<?php echo date("d/m/Y", strtotime($row['tc'])) ?>" type="text" name="table5_c[]" class="form-control datepicker"></td>
                                 <td><input value="<?php echo $row['td'] ?>" type="text" name="table5_d[]" class="form-control"></td>
                                 <td><button type="button" class="btn btn-danger btn-xs remove"><span class="fas fa-trash"></span></button></td>
                             </tr>
@@ -474,8 +473,8 @@
                                         <?php endforeach; ?>
                                     </select>
                                 </td>
-                                <td><input value="<?php echo $row['tb'] ?>" type="text" name="table6_b[]" class="form-control datepicker"></td>
-                                <td><input value="<?php echo $row['tc'] ?>" type="text" name="table6_c[]" class="form-control datepicker"></td>
+                                <td><input value="<?php echo date("d/m/Y", strtotime($row['tb'])) ?>" type="text" name="table6_b[]" class="form-control datepicker"></td>
+                                <td><input value="<?php echo date("d/m/Y", strtotime($row['tc']))?>" type="text" name="table6_c[]" class="form-control datepicker"></td>
                                 <td><input value="<?php echo $row['td'] ?>" type="text" name="table6_d[]" class="form-control"></td>
                                 <td><button type="button" class="btn btn-danger btn-xs remove"><span class="fas fa-trash"></span></button></td>
                             </tr>
@@ -505,9 +504,9 @@
                         <?php foreach ($client['table7'] as $row): ?>
                             <tr>
                                 <td><input value="<?php echo $row['ta']; ?>" type="text" name="table7_a[]" class="form-control datepicker"></td>
-                                <td><input  value="<?php echo $row['tb']; ?>"type="text" name="table7_b[]" class="form-control"></td>
-                                <td><input  value="<?php echo $row['tc']; ?>"type="text" name="table7_c[]" class="form-control"></td>
-                                <td><input  value="<?php echo $row['td']; ?>"type="text" name="table7_d[]" class="form-control"></td>
+                                <td><input  value="<?php echo $row['tb']; ?>" type="text" name="table7_b[]" class="form-control"></td>
+                                <td><input  value="<?php echo $row['tc']; ?>" type="text" name="table7_c[]" class="form-control"></td>
+                                <td><input  value="<?php echo $row['td']; ?>" type="text" name="table7_d[]" class="form-control"></td>
                                 <td><button type="button" class="btn btn-danger btn-xs remove"><span class="fas fa-trash"></span></button></td>
                             </tr>
                         <?php endforeach; ?>
