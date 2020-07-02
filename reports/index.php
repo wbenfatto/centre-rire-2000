@@ -22,9 +22,9 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>De </label>
+                        <label>Début: </label>
                         <input type="text" id="cardDateInitial1" class="datepicker col-date-2" autocomplete="off">
-                        <label> à </label>
+                        <label> Fin: </label>
                         <input type="text" id="cardDateEnd1" class="datepicker col-date-2" autocomplete="off">
                     </div>
 
@@ -113,21 +113,27 @@
 
                     $.post("/reports/search-data.php", {table, select, initial, end}, function (data) {
 
-                        let content = "";
-                        JSON.parse(data).forEach(function (item) {
-                            content += "<tr>";
-                            content += `<td>${item.firstName}</td>`;
-                            content += `<td>${item.lastName}</td>`;
-                            content += `<td>${item.ta}</td>`;
-                            content += `<td>${item.tb}</td>`;
-                            content += `<td>${item.tc}</td>`;
-                            content += `<td>${item.td}</td>`;
-                            content += `</tr>`;
-                        });
+                        if(JSON.parse(data).length === 0){
+                            $("#tbody").html("<tr><td colspan='6' class='center'>Aucune donnée n'a été trouvée, essayez une autre option ou une plage différente.</td></tr>");
+                        }else{
+                            let content = "";
+                            JSON.parse(data).forEach(function (item) {
+                                content += "<tr>";
+                                content += `<td>${item.firstName}</td>`;
+                                content += `<td>${item.lastName}</td>`;
+                                content += `<td>${item.ta}</td>`;
+                                content += `<td>${new Date(item.tb).toLocaleDateString('fr-FR')}</td>`;
+                                content += `<td>${new Date(item.tc).toLocaleDateString('fr-FR')}</td>`;
+                                content += `<td>${item.td}</td>`;
+                                content += `</tr>`;
+                            });
 
-                        $("#tbody").html(content);
+                            $("#tbody").html(content);
+                        }
 
                     });
+                }else{
+                    $("#tbody").html("<tr><td colspan='6' class='center'>Choisissez une option.</td></tr>");
                 }
             }
 

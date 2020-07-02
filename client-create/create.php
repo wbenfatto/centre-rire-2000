@@ -74,7 +74,7 @@ if ($stmt->rowCount() > 0) {
                 try {
 
                     $ta = $_POST['table' . $x . '_a'][$y];
-                    $tb = convertDate($_POST['table' . $x . '_b'][$y]);
+                    $tb = $_POST['table' . $x . '_b'][$y] !== null ? convertDate($_POST['table' . $x . '_b'][$y]) : "";
                     $tc = convertDate($_POST['table' . $x . '_c'][$y]);
                     $td = $_POST['table' . $x . '_d'][$y];
 
@@ -116,7 +116,7 @@ if ($stmt->rowCount() > 0) {
 
 
     setcookie("created", "ok", time() + 3, "/clients/");
-    header('Location: /clients/');
+//    header('Location: /clients/');
 
 
 } else {
