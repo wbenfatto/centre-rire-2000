@@ -27,6 +27,10 @@ input:focus, input.form-control:focus {
     width: 140px !important;
 }
 
+.col-date-2{
+    width: 100px !important;
+}
+
 .col-btn{
     width: 50px !important;
 }
@@ -158,4 +162,24 @@ input:focus, input.form-control:focus {
 
 .container-agenda{
     margin-bottom: 50px;
+}
+
+.report-sidebar{
+    min-height: 100vh;
+}
+
+.container-fluid{
+    min-height: 100vh;
+}
+
+.card-inside{
+    padding: 10px;
+    text-align: center;
+}
+
+.card-title{
+    font-size: 16px;
+    color: #777;
+    padding: 0;
+    margin: 0;
 }
