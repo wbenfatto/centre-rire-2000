@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 8.0.20, for Win64 (x86_64)
+-- MariaDB dump 10.17  Distrib 10.4.13-MariaDB, for Linux (x86_64)
 --
--- Host: localhost    Database: cr2kdb
+-- Host: localhost    Database: cr2kDB
 -- ------------------------------------------------------
--- Server version	8.0.20
+-- Server version	10.4.13-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -21,11 +21,11 @@
 
 DROP TABLE IF EXISTS `auth`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `auth` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `user` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `pass` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user` varchar(45) DEFAULT NULL,
+  `pass` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -46,10 +46,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `clients`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `clients` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `start` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `start` timestamp NOT NULL DEFAULT current_timestamp(),
   `image` varchar(255) NOT NULL,
   `firstName` varchar(100) NOT NULL,
   `lastName` varchar(100) NOT NULL,
@@ -72,7 +72,7 @@ CREATE TABLE `clients` (
   `profile` mediumtext NOT NULL,
   `objectives` mediumtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,36 +90,36 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `companies`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `companies` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `start` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `image` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `sectorActivity` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `numEmployee` int DEFAULT NULL,
-  `numImmigrants` int DEFAULT NULL,
-  `sectorJob` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `check1` tinyint(1) DEFAULT '0',
-  `check2` tinyint(1) DEFAULT '0',
-  `check3` tinyint(1) DEFAULT '0',
-  `check4` tinyint(1) DEFAULT '0',
-  `check5` tinyint(1) DEFAULT '0',
-  `check6` tinyint(1) DEFAULT '0',
-  `check7` tinyint(1) DEFAULT '0',
-  `check8` tinyint(1) DEFAULT '0',
-  `check9` tinyint(1) DEFAULT '0',
-  `person` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT '0',
-  `position` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `phone1` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `phone2` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `remarks` mediumtext CHARACTER SET utf8 COLLATE utf8_general_ci,
-  `radio1` tinyint(1) DEFAULT '0',
-  `radio2` tinyint(1) DEFAULT '0',
-  `radio3` tinyint(1) DEFAULT '0',
-  `radio4` tinyint(1) DEFAULT '0',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `start` timestamp NULL DEFAULT current_timestamp(),
+  `image` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `sectorActivity` varchar(255) DEFAULT NULL,
+  `numEmployee` int(11) DEFAULT NULL,
+  `numImmigrants` int(11) DEFAULT NULL,
+  `sectorJob` varchar(255) DEFAULT NULL,
+  `check1` tinyint(1) DEFAULT 0,
+  `check2` tinyint(1) DEFAULT 0,
+  `check3` tinyint(1) DEFAULT 0,
+  `check4` tinyint(1) DEFAULT 0,
+  `check5` tinyint(1) DEFAULT 0,
+  `check6` tinyint(1) DEFAULT 0,
+  `check7` tinyint(1) DEFAULT 0,
+  `check8` tinyint(1) DEFAULT 0,
+  `check9` tinyint(1) DEFAULT 0,
+  `person` varchar(255) DEFAULT '0',
+  `position` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `phone1` varchar(45) DEFAULT NULL,
+  `phone2` varchar(45) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `remarks` mediumtext DEFAULT NULL,
+  `radio1` tinyint(1) DEFAULT 0,
+  `radio2` tinyint(1) DEFAULT 0,
+  `radio3` tinyint(1) DEFAULT 0,
+  `radio4` tinyint(1) DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -139,10 +139,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `files`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `files` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `client_id` int NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `client_id` int(11) NOT NULL,
   `filename` varchar(255) NOT NULL,
   `url` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
@@ -164,12 +164,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `files2`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `files2` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `company_id` int NOT NULL,
-  `filename` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `company_id` int(11) NOT NULL,
+  `filename` varchar(255) DEFAULT NULL,
+  `url` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -189,16 +189,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `table1`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `table1` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `client_id` int NOT NULL,
-  `ta` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `tb` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `tc` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `td` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `client_id` int(11) NOT NULL,
+  `ta` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `tb` date DEFAULT NULL,
+  `tc` date DEFAULT NULL,
+  `td` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=170 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=218 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -216,16 +216,16 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `table2`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `table2` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `client_id` int NOT NULL,
-  `ta` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `tb` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `tc` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `td` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `client_id` int(11) NOT NULL,
+  `ta` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `tb` date DEFAULT NULL,
+  `tc` date DEFAULT NULL,
+  `td` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -243,13 +243,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `table3`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `table3` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `client_id` int NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `client_id` int(11) NOT NULL,
   `ta` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `tb` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `tc` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `tb` date NOT NULL,
+  `tc` date NOT NULL,
   `td` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=156 DEFAULT CHARSET=latin1;
@@ -270,13 +270,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `table4`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `table4` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `client_id` int NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `client_id` int(11) NOT NULL,
   `ta` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `tb` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `tc` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `tb` date NOT NULL,
+  `tc` date NOT NULL,
   `td` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=156 DEFAULT CHARSET=latin1;
@@ -297,13 +297,13 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `table5`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `table5` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `client_id` int NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `client_id` int(11) NOT NULL,
   `ta` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `tb` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `tc` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `tb` date NOT NULL,
+  `tc` date NOT NULL,
   `td` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=156 DEFAULT CHARSET=latin1;
@@ -324,12 +324,12 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `table6`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `table6` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `client_id` int NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `client_id` int(11) NOT NULL,
   `ta` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `tb` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `tb` date NOT NULL,
   `tc` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `td` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
@@ -351,10 +351,10 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `table7`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `table7` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `client_id` int NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `client_id` int(11) NOT NULL,
   `ta` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `tb` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `tc` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
@@ -381,4 +381,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-06-22 12:25:34
+-- Dump completed on 2020-07-03  9:15:14
