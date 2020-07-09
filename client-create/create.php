@@ -116,7 +116,7 @@ if ($stmt->rowCount() > 0) {
 
 
     setcookie("created", "ok", time() + 3, "/clients/");
-//    header('Location: /clients/');
+    header('Location: /clients/');
 
 
 } else {
